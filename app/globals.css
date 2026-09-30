@@ -551,8 +551,8 @@ img {
    ========================================= */
 .facilityGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .facilityCard {
@@ -862,6 +862,43 @@ img {
   margin-top: 14px;
 }
 
+/* Discount Banner */
+.discountBanner {
+  background: linear-gradient(135deg, #fbf2ea 0%, #f6e6da 100%);
+  border: 1.5px dashed var(--rust);
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 14px rgba(183, 101, 64, 0.08);
+}
+
+.discountBannerBadge {
+  background: var(--rust);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.discountBannerText {
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.discountBannerText strong {
+  color: var(--rust);
+  font-weight: 800;
+}
+
 /* Calculator Container */
 .calculatorWidget {
   background: #fff;
@@ -913,7 +950,7 @@ img {
 
 .calcOptionGroup label {
   display: block;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
@@ -924,6 +961,43 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+}
+
+.calcSlotPillGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.calcSlotPill {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  color: var(--ink2);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calcSlotPill:hover {
+  border-color: var(--sand);
+  background: #fff;
+}
+
+.calcSlotPill.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
+.slotClock {
+  font-size: 13px;
 }
 
 .calcPill {
@@ -966,6 +1040,32 @@ img {
   color: #fff;
 }
 
+.pillHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.discountTag {
+  background: #ffede3;
+  color: #b76540;
+  border: 1px solid #ffd2be;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.calcPill.active .discountTag {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 /* Calculator Summary Box */
 .calcSummaryCard {
   background: var(--cream);
@@ -977,23 +1077,103 @@ img {
   border: 1px solid var(--sand);
 }
 
-.summaryTop span {
+.summaryBadgeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.summaryBadgeRow span:first-child {
   font-size: 10.5px;
   font-weight: 800;
   color: var(--rust);
   letter-spacing: 1.5px;
 }
 
+.summaryDiscountPill {
+  background: var(--rust);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 50px;
+}
+
 .summaryTop h4 {
   font: 700 24px Georgia, serif;
-  margin: 6px 0 2px;
+  margin: 4px 0 2px;
   color: var(--ink);
 }
 
 .summaryShiftTime {
   font-size: 12px;
   color: var(--ink2);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.summaryDurationBadge {
+  font-size: 12px;
+  color: var(--muted);
   margin-bottom: 16px;
+}
+
+/* Pricing Box inside Summary Card */
+.calcPriceBox {
+  background: #fff;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(38, 58, 50, 0.04);
+}
+
+.priceLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.priceValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.finalPrice {
+  font: 700 32px Georgia, serif;
+  color: var(--rust);
+}
+
+.originalPrice {
+  font-size: 18px;
+  color: #9aa59f;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.savingsNotice {
+  margin-top: 6px;
+  font-size: 11.5px;
+  color: var(--olive);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.savingsNotice strong {
+  color: var(--ink);
+}
+
+.regularNotice {
+  margin-top: 6px;
+  font-size: 11.5px;
+  color: var(--muted);
 }
 
 .summaryFeaturesList {
@@ -1076,20 +1256,58 @@ img {
   border-radius: 4px;
 }
 
+.planTier {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--rust);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.planCard.featured .planTier {
+  color: var(--gold);
+}
+
+.planDiscountBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ffede3;
+  color: #b76540;
+  border: 1px solid #ffd2be;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 .planCard h3 {
   font: 700 22px Georgia, serif;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--ink);
 }
 
 .planPrice {
   font: 700 30px Georgia, serif;
-  margin: 20px 0 6px;
+  margin: 16px 0 2px;
   color: var(--rust);
 }
 
 .planCard.featured .planPrice {
   color: #f7a984;
+}
+
+.planSub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: -2px;
+  margin-bottom: 12px;
+}
+
+.planCard.featured .planSub {
+  color: #cad6d0;
 }
 
 .planCard p {
@@ -1102,6 +1320,145 @@ img {
 .planCard .button {
   margin-top: 28px;
   width: 100%;
+}
+
+/* =========================================
+   Official Timetable Table
+   ========================================= */
+.timetableSection {
+  background: var(--paper);
+}
+
+.timetableContainer {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(38, 58, 50, 0.04);
+  overflow: hidden;
+}
+
+.tableResponsiveWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timetableTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.timetableTable thead {
+  background: var(--ink);
+  color: #fff;
+}
+
+.timetableTable th {
+  padding: 16px 18px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.thDiscountBadge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.timetableTable td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.timetableTable tr.evenRow {
+  background: rgba(242, 238, 228, 0.35);
+}
+
+.timetableTable tr:hover {
+  background: rgba(214, 196, 167, 0.2);
+}
+
+.slotCell strong {
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.hoursBadge {
+  background: var(--cream);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.priceCell strong {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.discountHighlight strong {
+  color: var(--rust);
+}
+
+.discountHighlight small,
+.discountHighlightYear small {
+  display: block;
+  font-size: 10.5px;
+  color: var(--olive);
+  font-weight: 600;
+}
+
+.discountHighlightYear strong {
+  color: #a45330;
+  font-weight: 800;
+}
+
+.tableBookBtn {
+  display: inline-block;
+  background: var(--whatsapp);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.tableBookBtn:hover {
+  background: var(--whatsapp-dark);
+  transform: translateY(-1px);
+}
+
+.timetableFootnote {
+  padding: 16px 20px;
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+}
+
+.timetableFootnote p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+
+.timetableFootnote a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 /* =========================================
@@ -1302,6 +1659,47 @@ img {
   background: var(--whatsapp);
 }
 
+.contactAction.mapsIcon > span {
+  background: #ea4335;
+}
+
+.contactAction.facebookIcon > span {
+  background: #1877f2;
+}
+
+.contactAction.altPhoneAction {
+  border-color: #ffd8c7;
+  background: #fffdfb;
+}
+
+.contactAction.altPhoneAction:hover {
+  border-color: var(--rust);
+  box-shadow: 0 8px 20px rgba(183, 101, 64, 0.12);
+}
+
+.contactAction.altPhoneAction .altPhoneIcon {
+  background: var(--rust);
+}
+
+.altPhoneHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.altPhoneBadge {
+  background: #ffede3;
+  color: #b76540;
+  border: 1px solid #ffd2be;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
 .contactAction strong {
   display: block;
   font: 700 17px Georgia, serif;
@@ -1335,6 +1733,27 @@ footer {
   margin: 0 auto 0 0;
   color: var(--muted);
   font-size: 11.5px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 11.5px;
+}
+
+.footerLinks a {
+  color: var(--rust);
+  font-weight: 800;
+  transition: color 0.2s;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+
+.footerLinks .footerFbLink {
+  color: #1877f2 !important;
 }
 
 .footer > a {
@@ -1649,6 +2068,16 @@ footer {
 
   .calcPillGroup {
     grid-template-columns: 1fr;
+  }
+
+  .calcSlotPillGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .discountBanner {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
   }
 
   .calcPill {

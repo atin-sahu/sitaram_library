@@ -7,8 +7,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SitaRam Library | Premium Study Space Lucknow",
-  description: "A focused, peaceful, air-conditioned study library in Lucknow. High-speed Wi-Fi, personal study carrels, and 24/7 power backup. Call 70801 51101.",
+  title: "SitaRam Library | Study Point Banthra, Kanpur Road, Lucknow",
+  description: "A peaceful, fully air-conditioned study library in Banthra, Kanpur Road, Lucknow. High-speed Wi-Fi, ergonomic chairs, and 100% power backup. Call 70801 51101.",
 };
 
 export default function RootLayout({
